@@ -1,20 +1,36 @@
-// ForwardListCpp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include "Headers\forward_list.hpp"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    using namespace my;
+
+    Forward_list fwd_list;
+
+    std::cout << "fwd_list.empty() : " << fwd_list.empty() << std::endl;
+
+    fwd_list.push_front(1); // fwd_list.remove(1)
+    fwd_list.push_front(1); // fwd_list.remove(1)
+    fwd_list.push_front(1); // fwd_list.remove(1)
+
+    fwd_list.push_front(2); // fwd_list.find(2) - 1
+    fwd_list.push_front(2); // fwd_list.find(2) - 2
+    fwd_list.push_front(2); // fwd_list.find(2) - 3
+
+    fwd_list.push_front(3); // fwd_list.front()/2
+    fwd_list.push_front(4); // fwd_list.front()/1, fwd_list.pop_front()
+
+    std::cout << "fwd_list.empty() : " << fwd_list.empty() << std::endl;
+    std::cout << "fwd_list.find(2) : " << fwd_list.find(2) << std::endl;
+
+    fwd_list.remove(1);
+
+    std::cout << "fwd_list.front() : " << fwd_list.front() << std::endl;
+    fwd_list.pop_front();
+    std::cout << "fwd_list.pop_front();" << std::endl;
+    std::cout << "fwd_list.front() : " << fwd_list.front() << std::endl;
+
+    fwd_list.clear();
+    std::cout << "fwd_list.clear();" << std::endl;
+    std::cout << "fwd_list.empty() : " << fwd_list.empty() << std::endl;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
